@@ -113,7 +113,7 @@ requirejs(["https://dl.dropboxusercontent.com/s/z1ymfg9xgmn5aj9/require-config.j
 	
 		requirejs(["gms-ajax"], function(ajax) {
 			// ajax.get("https://dl.dropboxusercontent.com/s/uam4hzekyip069l/stone-balancer-updates.html", {
-			ajax.get("https://raw.githack.com/HarmoniousHum/stone-balancer/main/stone-balancer-updates.html", {
+			ajax.get("https://raw.githack.com/HarmoniousHum/stone-balancer/main/updates.html", {
 				load: function(doc) {
 					var status = document.importNode(doc.getElementById("status"), true);
 					var updates = document.importNode(doc.getElementById("updates"), true);
