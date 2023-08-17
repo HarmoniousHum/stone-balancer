@@ -1,0 +1,1003 @@
+/*********************************************************************
+======================================================================
+	DOCUMENT INFORMATION
+	- Document: The Stone Balancer (TEF blog)
+	- Version:  1.0.0
+	- Client:   Hum
+	- Author:   GMSuerte
+	All code copyright GMSuerte 2014-2015.
+======================================================================
+	Contents:
+	- Initial
+	- Weird Names
+	- Base
+	- Main Block
+	- Comments
+	- Tooltips
+	- Inline Lists
+	- Custom Tabs
+	- Thumbnails
+*********************************************************************/
+
+/*==================================================================
+	INITIAL
+	- Removes all unwanted default items and styles from the page.
+====================================================================*/
+
+body {
+	-webkit-text-size-adjust: 100%;
+}
+
+.breadcrumb, #header-region, #sidebar-left {
+	display: none;
+}
+
+#squeeze .left-corner > h2, #tabs-wrapper > .with-tabs {
+	visibility: hidden;
+	height: 0;
+	padding: 0;
+}
+
+.node > .picture, .node > .submitted {
+	display: none;
+}
+
+.links .blog_usernames_blog, .links .statistics_counter {
+	display: none;
+}
+
+ul li, li.leaf {
+	background-image: none;
+	padding: 0;
+}
+
+.node {
+	border: none;
+}
+
+#tabs-wrapper {
+	border-color: transparent;
+}
+
+/* "View" and "Edit" */
+#tabs-wrapper .primary a:link/*, #tabs-wrapper .primary li a:hover*/ {
+	background: none;
+}
+
+.comment {
+	border: none;
+	/* margin: 10px 0; */
+}
+
+#wrapper #container #center .right-corner .left-corner {
+	background-color: transparent;
+}
+
+div, article, nav {
+	border-radius: 1em;
+}
+
+/* Add new comment row */
+.node > .clear-block > .links {
+	margin-top: 14px;
+	text-align: center;
+}
+
+#wrapper #container #center .right-corner {
+	/* margin-left: 14%; */ /* Originally auto. */
+	margin-right: auto;
+	/* width: 54%; */ /* Originally 70% */
+	/* max-width: 85em; */ /* Just added these two 10/7/2014. */
+	/* min-width: 65em; */
+	/* Most above commented-out 11/28/2014 */
+}
+
+.left-corner > .clear-block {
+	/* All below added 11/28/2014 */
+	margin-left: auto/*10%*/; /* Before stone's revamp: 10% */
+	margin-right: auto;
+	width: 57%;
+	min-width: 61em;
+}
+
+#wrapper #container #center {
+	margin-left: auto;
+	/* margin-right: auto; */
+}
+
+#squeeze {
+	padding: 0;
+}
+
+#center > #squeeze {
+	margin-left: 0;
+}
+
+#squeeze h2 {
+	margin: 0;
+	/* padding: 1em 0; */ /* Most needed for comment form. <-- Not anymore. */
+}
+
+/* For Add new comment */
+.node .links li {
+	padding-right: 0;
+}
+
+/*===========================================================================
+	BASE
+	- Main styles to be applied to main block and comments.
+	- Does not include styles specifically for custom content.
+=============================================================================*/
+
+body {
+	color: #FFF;
+	background-image: url('https://dl.dropbox.com/s/su50unx0srwz39h/Stone%27s%20Background.png');
+	background-attachment: fixed;
+	/*background-position: right;*/
+	background-size: 15% 15%;
+	background-repeat: /*no-*/repeat;
+}
+
+a:link, a:visited {
+	color: inherit;
+}
+
+h3 {
+	color: inherit;
+}
+
+/* Center Add new comment vertically */
+.clear-block .links {
+	vertical-align: middle;
+}
+
+fieldset {
+	background-color: initial;
+}
+
+/*===========================================================================
+	MAIN BLOCK
+	- Main styles to be applied specifically to main block's content.
+	- Does not include comments.
+=============================================================================*/
+
+.node {
+	padding: 0; /* Don't know if this should be in this section or in a previous one. */
+}
+
+#comments {
+	margin: 0;
+}
+
+.node > .content {
+	background-image: url('https://dl.dropbox.com/s/gbjrof3f1j7tomr/Stone%27s%20Content%20Background.png');
+	background-position: right top;
+	/*width: 65%;*/
+	min-width: 50em;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	padding: 4em 4em 1em; /* Originally 4em 4em 1em; 7/8/15*/
+	background-size: 15% 15%/*initial*/ /*cover*/; /* Added 1/16/2016 */
+	background-repeat: /*no-*/repeat;
+	background-attachment: fixed;
+}
+
+#main-block {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#stone_picture {
+	max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.node > .content ol {
+	list-style: none;
+	padding-left: 0;
+}
+
+/*===========================================================================
+	COMMENTS
+	- Main styles to be applied specifically to comments.
+=============================================================================*/
+
+.comment .content > .clear-block {
+	display: none;
+}
+
+#comments .comment_reply {
+	display: none;
+}
+
+#comments .comment {
+	background-color: #E9E4D3;
+}
+
+#comments .links {
+	background-color: transparent;
+}
+
+.comment .content {
+	color: #514844;
+	/* text-align: left; */
+}
+
+.comment a:link, .comment a:visited {
+	color: #93AD70;
+}
+
+.comment {
+	margin-bottom: 1em;
+}
+
+.comment .content img {
+	max-width: 100%;
+}
+
+#comments > .item-list > .pager > li {
+	border-radius: 50%;
+	background: #514844;
+	border: 1px solid #E9E4D3;
+}
+
+#comments > .item-list > .pager > .pager-current {
+	/* color: #E9E4D3; */
+}
+
+#comments > .item-list > .pager > li > a {
+	color: #93AD70;
+}
+
+#comments blockquote {
+	color: #645452;
+}
+
+/*===========================================================================
+	TOOLTIPS
+	- Pop-ups that display info when moused over.
+	-------------------------------------------------------------------------
+	Known issues:
+	 - 
+=============================================================================*/
+/* Initial state of tooltip, as well as styles of tooltip */
+.tooltip {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 18px; /* Originally 1.5em; changed 11/28/2014 */
+	z-index: 2;
+	background: #514844;
+	padding: 0.75em;
+	text-align: justify;
+	color: #E9E4D3;
+	/* margin: 0; */
+	border: 1px solid #E9E4D3;
+	border-radius: 1em;
+}
+
+.tooltip > :first-child {
+	margin-top: 0;
+}
+
+.tooltip > :last-child {
+	margin-bottom: 0;
+}
+
+.tooltip-container {
+	position: relative;
+}
+
+.tooltip-marker {
+	-webkit-user-select: none;
+	/* Also had margin-left/right auto */
+	/* width: 100%; */
+	display: inline;
+	border-bottom: 1px dashed #E9E4D3;
+}
+
+.tooltip-marker:hover + .tooltip, .tooltip:hover {
+	display: block;
+}
+
+/*===========================================================================
+	Specific Tooltips
+=============================================================================*/
+
+/* Just for the boxes that pop up simply to show colors */
+/* Need to change name? Sounds close to .hover-menu */
+.color-box {
+	width: 3em;
+	height: 3em;
+	padding: 2em;
+}
+
+#disclaimer {
+	border: none;
+	padding: 2em;
+}
+
+#disclaimer a[href] {
+	color: #93AD70;
+}
+
+.nicknames .tooltip {
+	/* margin-left: -100%;
+	margin-right: -100%;
+	left: -100%;
+	right: -100%; */ /* if implementing, make .window { overflow-x: hidden; } */
+	text-align: center;
+	border: none;
+	background: none;
+}
+
+.nicknames /*.tooltip*/ .tooltip-word {
+	padding: inherit;
+	border-radius: inherit;
+	border: 1px solid;
+	/* white-space: nowrap; */
+	display: inline-block;
+	background-color: #514844;
+}
+
+/*===========================================================================
+	INLINE LISTS
+	- Lists which display inline (side-by-side, like regular text).
+	- These inline lists use borders instead of text to separate list elements.
+	- Need to do something about the borders when not wanted.
+=============================================================================*/
+
+.inline-list {
+    /* margin-top: 0; */ /* Both were 0.5em */
+	margin-bottom: 1em; /* Was 0.5em for whatever reason. */
+}
+
+.inline-list > li {
+	margin-left: 0;
+	padding: 0.2em 1em;
+	border-left: 1px solid;
+	list-style: none;
+	display: inline;
+}
+  
+.inline-list > li:first-child {
+	border-left-color: transparent;
+}
+
+/*===========================================================================
+	HOVER MENU
+=============================================================================*/
+
+.hover-menu {
+	display: none;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+
+.node > .content .hover-menu li {
+	/* width: 100%;
+	margin: 0; */
+}
+
+.hover-menu li:nth-of-type(n+2) {
+	margin-top: 1em;
+}
+
+.hover-menu:hover {
+	/* display: block; */
+}
+
+/******************************************************************************
+	Forest Status
+	The box that shows where a character is.
+******************************************************************************/
+.forest-status-wrapper {
+	
+}
+
+.forest-status {
+	background: #514844;
+	display: inline-block;
+	/* width: 18em; */
+	padding: 1em;
+	/* margin-left: auto;
+	margin-right: auto; */
+}
+
+/*.forest-status .gms-pictogram-status {
+	display: none;
+}*/
+
+.forest-status .gms-pictogram {
+	display: inline;
+	width: 20px;
+	height: 20px;
+}
+
+/*===========================================================================
+	TAB LABELS
+	These act on the windows, defined in the next section.
+=============================================================================*/
+
+.tab-labels {
+	border-radius: inherit;
+	padding: 1em 0;
+	border-width: thin;
+	border-style: solid;
+	border-color: black;
+	display: inline-block;
+	/* margin-bottom: -1em; */
+	background-image: url("https://dl.dropbox.com/s/t67jropat3wakld/Stone%20Texture.png");
+	background-position: left center;
+}
+
+.tab-labels {
+	-webkit-user-select: none;
+}
+
+.tab-labels .tooltip {
+	background-color: transparent;
+	border: none;
+	color: inherit;
+}
+
+.tab-labels .tooltip-marker {
+	border: none;
+}
+
+.tab-labels .hover-menu {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.tab-labels.inline-list > li {
+	padding: 0;
+}
+
+.tab-labels .inline-list > li {
+	padding: 0; /* Affects height of border line in between */
+}
+
+.tab-labels > li > label {
+	padding: 1em 0.5em;
+	border-radius: 1em;
+}
+
+.tab-labels label:hover {
+	text-decoration: underline;
+}
+
+/* When label is clicked */
+.tab-labels label:active {
+	
+}
+
+/*===========================================================================
+	WINDOWS
+=============================================================================*/
+
+.windows {
+	margin: 1em 0;
+	height: 45em;
+	background-color: #514844;
+	overflow-y: scroll;
+	padding: 24px; /* Originally 2em; updated 11/28/2014 */
+	font-size: 0.85em;
+	color: #E9E4D3;
+}
+
+.window {
+	/* display: inline; */
+}
+
+.windows header {
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.windows h3 {
+	font-size: 200%;
+	margin-top: 1em;
+}
+
+.windows h3, .windows h4 {
+	text-align: center;
+}
+
+.windows .current-status {
+	text-align: center;
+}
+
+.current-status {
+	margin-bottom: 0;
+}
+
+#updates input[name='updates']:not(#recently) + .window h3 {
+	font-size: 120%;
+}
+
+dl, dl dd {
+	margin: 0;
+}
+
+dl dd {
+	margin-bottom: 1em;
+}
+/* Note: check if h5's still exist. */
+.window h5, .window dl dt {
+	color: #998176;
+	font-size: 1.5em;
+	font-weight: normal;
+	font-family: Georgia, Helvetica, Arial, sans-serif;
+}
+
+.window dl dl dt {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	display: inline;
+}
+
+.window dl dl dt:nth-of-type(n + 2)::before {
+	/* display: block;
+	content: ""; */
+}
+
+.window dl dl dd {
+}
+
+.window dd > p {
+	margin-top: 0;
+}
+
+.window ul li {
+	margin-left: 0;
+}
+
+.window h4 {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.window a[href] {
+	color: #93AD70;
+}
+
+.windows > input[type="radio"] {
+	display: none;	 
+}
+
+.windows > input[type="radio"] + .window {
+	display: none;
+	/* Remove if problems  */
+	/* position: absolute;
+	left: -99999px; */
+	/* height: 1px; */
+}
+
+.windows > input[type="radio"] + .window > section {
+	/* height: 1px; */
+}
+
+.windows > input[type="radio"]:checked + .window {
+	display: block;
+	/* position: static; */
+}
+
+.windows > input[type="radio"]:checked + .window > section {
+	/* height: initial; */
+}
+
+.window > section { /* previously .windows section */
+	text-align: justify;
+}
+
+#updates .window section:nth-of-type(n + 2):before {
+	content: "";
+	display: block;
+	border: thin solid;
+	margin: 2em auto;
+	background-color: white;
+}
+
+/* Specific to stuff in boxes */
+
+#relationships ol {
+	margin-top: 0;
+}
+
+#herd-social + #relationships li {
+	/* margin: 0; */
+}
+
+#habits-quirks {
+	
+}
+
+#habits-quirks > li  li {
+	margin-left: 1em;
+}
+
+#habits-quirks > li li:nth-of-type(n + 2) {
+	margin-top: 1em;
+}
+
+#habits-quirks > li li:before {
+	content: '-';
+	margin-right: 0.5em;
+}
+
+#artwork{
+	font-size: 130%;
+	font-family: Georgia, Helvetica, Arial, sans-serif;
+}
+
+#body-language dl dt {
+	/* font-style: italic; */
+}
+/* 10/22/14 */
+/*#response-refusal*/ .summary-terms {
+	margin-left: 0.5em;
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.summary-terms p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.summary-terms .thumbnail {
+	margin-left: initial;
+	top: 1.5em;
+}
+
+#response-refusal > dt {
+	font-weight: bold;
+}
+
+/*===========================================================================
+	Thumbnails
+=============================================================================*/
+
+.thumbnail {
+	top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 27em;
+	padding: 1em;
+	/* max-height: 29em; */
+	/* width: 100%; */
+	text-align: center;
+}
+
+@media screen and (max-device-width: 1280px) {
+	.thumbnail {
+		top: 1.5em;
+	}
+}
+
+.thumbnail figcaption {
+	
+}
+
+.thumbnail img {
+	max-width: 93%;
+	height: 100%;
+}
+
+/*===========================================================================
+	Pictogram
+=============================================================================*/
+
+.pictogram {
+	margin: 0;
+	/*margin-top: 1em;*/
+}
+
+.pictogram > object {
+	margin-top: -1.0em;
+	display: inline;
+}
+
+.pictogram > figcaption {
+	display: inline-block;
+	margin-top: 0;
+	vertical-align: top;
+}
+
+.pictogram > figcaption:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.pictogram:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*===========================================================================
+	Clickwrap
+=============================================================================*/
+
+#clickwrap-container {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: black;
+	/* padding: 1em; */
+	z-index: 9999;
+	border-radius: 0 !important;
+}
+
+#clickwrap {
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	width: 50%;
+	min-width: 20em;
+	margin-top: 12%;
+}
+
+#clickwrap button:first-of-type {
+	float: left;
+}
+
+#clickwrap button:last-of-type {
+	float: right;
+}
+
+/*
+#wrapper #container #center .right-corner {
+	position: static;
+}
+*/
+
+/*===========================================================================
+	Comment Form styling
+=============================================================================*/
+
+.gms-comment-form .smileys-box, .gms-comment-form .tips, .gms-comment-form > div > p {
+	display: none;
+}
+
+.gms-comment-form {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.5em; /* Otherwise h2 and progress are stuffed. */
+}
+
+.gms-comment-form .clear-block {
+	text-align: initial;
+}
+
+.gms-comment-form .preview { /* Meant for this section */
+	padding: 0;
+	border: none;
+}
+
+.preview .comment {
+	padding: 10px 20px 10px 50px;
+}
+
+.form-required {
+	display: none;
+}
+
+.grippie {
+	display: none;
+}
+
+.gms-comment-form textarea {
+	border-radius: 1.5em;
+	border: 0.15em solid gray;
+	background-color: #514844;
+	resize: none;
+}
+
+.gms-comment-form input[type='submit'] {
+	border-radius: 0.75em;
+	border: 0.15em solid buttonface;
+	color: #93AD70;
+	background-color: #514844;
+	margin-top: 0;
+}
+
+.gms-comment-form input:disabled {
+	color: grey;
+}
+
+.gms-comment-form > h2 {
+	display: none;
+}
+
+.form-item textarea.error {
+	color: #E9E4D3;
+}
+
+.form-loading, .form-sending {
+	text-align: center;
+	margin-top: 1.5em; /* Note: May have to remove when redoing comment form? */
+}
+
+.form-item {
+	margin-top: 1.5em; /* Note: May have to remove when redoing comment form? */
+	margin-bottom: 0;
+}
+
+.resizable-textarea {
+	width: auto;
+}
+
+.smileys-box fieldset {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gms-progress-box > span, .gms-progress-box > progress {
+	display: none;
+}
+
+textarea.error:focus {
+	outline-color: transparent;
+}
+
+/*===========================================================================
+	Loading comments styling
+=============================================================================*/
+.gms-comments-ready, #comments .gms-progress-box {
+	text-align: center;
+	margin-top: 1em;
+}
+
+/*===========================================================================
+	Spoiler button styling
+=============================================================================*/
+.spoiler {
+	
+}
+
+.spoiler-hidden {
+	
+}
+
+.spoiler-hidden > img {
+	display: none;
+}
+
+.spoiler-button {
+	margin: 0;
+	border-radius: 1em;
+	background: linear-gradient(white, lightgray);
+	border: 1px solid gray;
+}
+
+:focus {
+	outline-color: #93AD70;
+	outline-width: 1px;
+	outline-style: solid;
+	outline-offset: 0;
+	-moz-outline-radius: 2em; /* Perhaps remove. */
+	/* Also consider box shadow solution: 0 0 1px 1px #93AD70 (remember to adjust) */
+}
+
+/*============================================================================
+	Slider
+=============================================================================*/
+
+.slide-container {
+	
+}
+
+.slide {
+	display: none;
+}
+
+input[type="radio"]:checked + .slide {
+	display: initial;
+}
+
+.slide-changer {
+	width: 11em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slide-label:first-of-type {
+	float: left;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.slide-label:last-of-type {
+	float: right;
+}
+
+.slide-label > img:last-of-type {
+	display: none;
+}
+
+.slide-label:hover > img:first-of-type {
+	display: none;
+}
+
+.slide-label:hover > img:last-of-type {
+	display: initial;
+}
+
+/*
+.slide-label > img:hover {
+	background-image: url("https://dl.dropbox.com/s/2kub7hx2g3rl3j5/Arrow%20Onclick.png");
+}
+*/
+
+input[type="radio"] {
+	display: none;
+}
+
+/*============================================================================
+	Seasonal
+=============================================================================*/
+
+[data-gms-mdr] {
+	display: none;
+}
+
+/**
+	Hide comments by id
+*/
+
+#comment-1096264 + .comment,
+#comment-1096333 + .comment,
+#comment-1125545 + .comment,
+#comment-1125669 + .comment,
+#comment-1126228 + .comment,
+#comment-1126384 + .comment,
+#comment-1099121 + .comment,
+#comment-1099270 + .comment,
+#comment-1149645 + .comment,
+#comment-1179043 + .comment,
+#comment-1179299 + .comment,
+#comment-1181538 + .comment,
+#comment-1210831 + .comment,
+#comment-1211083 + .comment,
+#comment-1211085 + .comment,
+#comment-1211337 + .comment,
+#comment-1235743 + .comment,
+#comment-1308437 + .comment
+{
+	display: none;
+}
+
+/*===========================================================================
+	Miscellaneous
+	Not necessarily related to miscellaneous.js
+=============================================================================*/
+
+pre {
+	white-space: normal;
+}
+
+/* Check to see if the rest need(s ?) this, or if this is unnecessary. */
+#header > #logo-floater > h1 > a > #logo {
+	padding-right: 0;
+	padding-left: 0;
+}
