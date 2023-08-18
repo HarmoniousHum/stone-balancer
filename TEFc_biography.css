@@ -130,7 +130,8 @@ div, article, nav {
 =============================================================================*/
 
 body {
-	color: #393636;
+	color: #FFF;
+	background-image: url('https://dl.dropbox.com/s/su50unx0srwz39h/Stone%27s%20Background.png');
 	background-attachment: fixed;
 	/*background-position: right;*/
 	background-size: 15% 15%;
@@ -166,6 +167,20 @@ fieldset {
 
 #comments {
 	margin: 0;
+}
+
+.node > .content {
+	background-image: url('https://dl.dropbox.com/s/gbjrof3f1j7tomr/Stone%27s%20Content%20Background.png');
+	background-position: right top;
+	/*width: 65%;*/
+	min-width: 50em;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	padding: 4em 4em 1em; /* Originally 4em 4em 1em; 7/8/15*/
+	background-size: 15% 15%/*initial*/ /*cover*/; /* Added 1/16/2016 */
+	background-repeat: /*no-*/repeat;
+	background-attachment: fixed;
 }
 
 #main-block {
@@ -418,7 +433,8 @@ fieldset {
 	border-color: black;
 	display: inline-block;
 	/* margin-bottom: -1em; */
-	background: #413D3D;
+	background-image: url("https://dl.dropbox.com/s/t67jropat3wakld/Stone%20Texture.png");
+	background-position: left center;
 }
 
 .tab-labels {
