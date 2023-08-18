@@ -112,7 +112,6 @@ requirejs(["https://dl.dropboxusercontent.com/s/z1ymfg9xgmn5aj9/require-config.j
 		});
 	
 		requirejs(["gms-ajax"], function(ajax) {
-			// ajax.get("https://dl.dropboxusercontent.com/s/uam4hzekyip069l/stone-balancer-updates.html", {
 			ajax.get("https://raw.githack.com/HarmoniousHum/stone-balancer/main/updates.html", {
 				load: function(doc) {
 					var status = document.importNode(doc.getElementById("status"), true);
@@ -143,7 +142,7 @@ requirejs(["https://dl.dropboxusercontent.com/s/z1ymfg9xgmn5aj9/require-config.j
 		});
 	
 		requirejs(["gms-progress-meter"], function(ProgressMeter) {
-			ProgressMeter.settings.imgSrc = "https://dl.dropbox.com/s/850ucyatmp1hxhg/falling-stones.gif";
+			ProgressMeter.settings.imgSrc = "https://f2.toyhou.se/file/f2-toyhou-se/images/69602352_Dzo98FSWOE2TELw.png";
 			requirejs(["gms-utility", "gms-comment-form", "gms-spoilers", "gms-previewer"],
 			function(util, CommentForm, spoilers, Previewer) {
 				CommentForm.settings.success = function() {
@@ -153,7 +152,7 @@ requirejs(["https://dl.dropboxusercontent.com/s/z1ymfg9xgmn5aj9/require-config.j
 
 				Previewer.settings.dateFormat = "dddd, MMMM D, YYYY - h:mma";
 				//ProgressMeter.settings.imgSrc =
-				//	"https://dl.dropbox.com/s/850ucyatmp1hxhg/falling-stones.gif";
+				//	"https://f2.toyhou.se/file/f2-toyhou-se/images/69602352_Dzo98FSWOE2TELw.png";
 
 				$doc.ready(function() {
 					CommentForm.changeRedirects();
@@ -188,7 +187,7 @@ requirejs(["https://dl.dropboxusercontent.com/s/z1ymfg9xgmn5aj9/require-config.j
 		require(["gms-comments-loader", "gms-utility", "gms-spoilers", "gms-time", "gms-progress-meter"],
 		function(commentsLoader, util, spoilers, time, ProgressMeter) {
 			//ProgressMeter.settings.imgSrc =
-			//	"https://dl.dropbox.com/s/850ucyatmp1hxhg/falling-stones.gif";
+			//	"https://f2.toyhou.se/file/f2-toyhou-se/images/69602352_Dzo98FSWOE2TELw.png";
 			commentsLoader.settings.success = function() {
 				util.repliesToAdds();
 				spoilers.generate();
